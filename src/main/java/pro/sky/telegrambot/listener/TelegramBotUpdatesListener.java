@@ -47,7 +47,7 @@ public class TelegramBotUpdatesListener implements UpdatesListener {
                         boolean isCreated = taskService.createTaskFromMessage(chatId, text);
 
                         if (isCreated) {
-                            telegramBot.execute(new SendMessage(chatId, "Задача успешно сохранена!"));
+                            telegramBot.execute(new SendMessage(chatId, "Задача успешно сохранена! Я вам напомню об этом"));
                         } else {
                             telegramBot.execute(new SendMessage(chatId,
                                     "Неверный формат. Попробуй так:\n01.01.2022 20:00 Сделать домашнюю работу"));
